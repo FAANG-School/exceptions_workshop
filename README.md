@@ -14,7 +14,7 @@
    **Очень важно! Для каждой задачи создается отдельный Pull Request!**
 10. **После решение всех задач, которые успели, заполните форму по ссылке**: https://docs.google.com/forms/d/e/1FAIpQLSf04s-Qz0U3_boNtUdxZ-pGCqDp3ytY8SLDZWx1Omm4DRKrbQ/viewform?usp=sf_link
 
-**Если вы не работали до этого с гитом, то можете глянуть фидео, где найдете ответы на все свои вопросы - ** https://www.youtube.com/watch?v=VJm_AjiTEEc&t=694s
+**Если вы не работали до этого с гитом, то можете глянуть фидео, где найдете ответы на все свои вопросы -** https://www.youtube.com/watch?v=VJm_AjiTEEc&t=694s
 
 # Как клонировать репозиторий
 
