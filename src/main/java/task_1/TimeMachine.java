@@ -13,7 +13,8 @@ public class TimeMachine {
 		this.isWorking = isWorking;
 	}
 
-	public void traveInTime(TimeTraveler timeTraveler, int travelYear) throws TimeTravelException {
+	
+	public void traveInTime (TimeTraveler timeTraveler, int travelYear) {
 
 		if (!isWorking) {
 			throw new TimeTravelException("Time machine is off");
@@ -88,7 +89,6 @@ public class TimeMachine {
 		} catch (TimeTravelException e) {
 			log.error("Exception during invoking traveInTime(): {}", e.getMessage());
 		}
-		
 	}
 
 }
