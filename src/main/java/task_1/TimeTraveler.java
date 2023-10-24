@@ -1,3 +1,4 @@
+package task_1;
 public class TimeTraveler {
     String name;
     static int birthYear;

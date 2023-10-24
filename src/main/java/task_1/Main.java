@@ -1,3 +1,5 @@
+package task_1;
+
 public class Main{
     public static void main(String[] args) throws TimeTravelException {
         TimeTraveler timeTraveler = new TimeTraveler("Petr", 1960, 2020);

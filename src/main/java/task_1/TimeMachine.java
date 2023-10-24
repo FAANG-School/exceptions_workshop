@@ -1,4 +1,6 @@
+package task_1;
 public class TimeMachine {
+
     int currentYear;
     boolean isWorking;
 

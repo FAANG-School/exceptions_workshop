@@ -1,3 +1,4 @@
+package task_1;
 class TimeTravelException extends RuntimeException{
 
     public TimeTravelException() {}
