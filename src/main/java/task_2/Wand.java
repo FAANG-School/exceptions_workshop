@@ -13,7 +13,7 @@ public class Wand {
 				|| coreMaterial.isBlank() || powerLevel <= 0 || powerLevel > 10) {
 			throw new IllegalArgumentException("please check wand arguments");
 		}
-		
+
 		this.woodType = woodType;
 		this.length = length;
 		this.coreMaterial = coreMaterial;
@@ -34,6 +34,11 @@ public class Wand {
 
 	public int getPowerLevel() {
 		return powerLevel;
+	}
+
+	@Override
+	public String toString() {
+		return "Wood: " + woodType + ", " + length + " in. , core: " + coreMaterial + ", power: " + powerLevel;
 	}
 
 }
