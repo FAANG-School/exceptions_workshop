@@ -74,7 +74,8 @@ public class Task3 {
 		school.addGrade(simpsonsCharacter2, course5, 4);
 		school.addGrade(simpsonsCharacter2, course6, 5);
 		
-		school.getCharacterTranscript(simpsonsCharacter2);
-		school.getCharacterTranscript(simpsonsCharacter1);
+		System.out.println(simpsonsCharacter2.getName() + " has following grades: " + school.getCharacterTranscript(simpsonsCharacter2));
+		System.out.println(simpsonsCharacter1.getName() + " has following grades: " + school.getCharacterTranscript(simpsonsCharacter1));
+		
 	}
 }

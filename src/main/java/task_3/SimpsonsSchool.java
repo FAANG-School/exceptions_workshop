@@ -1,6 +1,7 @@
 package task_3;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import task_3.exceptions.CoursesNotFoundException;
 
@@ -39,14 +40,15 @@ public class SimpsonsSchool {
 
 	}
 
-	public void getCharacterTranscript(SimpsonsCharacter character) {
+	public List<String> getCharacterTranscript(SimpsonsCharacter character) {
 
 		if (character.getEnrolledCourses().isEmpty()) {
 			throw new CoursesNotFoundException("Not found any " + character.getName() + "'s courses");
 		}
 
-		System.out.println(character.getName() + " has following grades:");
-		character.getGrades().forEach(grade -> System.out.println(grade.getCourse().getCourseName() + ": " + grade.getGradeValue()));
+		return character.getGrades().stream()
+				.map(grade -> String.format("%s : %d", grade.getCourse().getCourseName(), grade.getGradeValue()))
+				.collect(Collectors.toList());
 
 	}
 
