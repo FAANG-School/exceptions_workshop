@@ -6,8 +6,9 @@ public class OlivandersShop{
     Map<String, Integer> woodTypeCount;
     Map<String, Integer> coreMaterialCount;
 
-    public OlivandersShop(Map<String, Integer> woodTypeCount) {
+    public OlivandersShop(Map<String, Integer> woodTypeCount, Map<String, Integer> coreMaterialCount) {
         this.woodTypeCount = woodTypeCount;
+        this.coreMaterialCount = coreMaterialCount;
     }
 
     public void placeOrder(WandOrder order){};
