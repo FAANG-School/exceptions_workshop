@@ -11,7 +11,7 @@ public class TimeMachine {
 
     void travelInTime(TimeTraveler timeTraveler, int travelYear) throws TimeTravelException {
         if(!isWorking) {
-            throw new TimeTravelException("mach");
+            throw new TimeTravelException("machine malfunction");
         }
         if(currentYear < timeTraveler.birthYear) {
             throw new TimeTravelException("you're not born yet");

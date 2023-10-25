@@ -15,4 +15,6 @@ public class OlivandersShop{
     public Wand findMostPowerfulWand() {
         return null;
     };
+
+    void makeOrder(WandOrder wandOrder, Wand wand){}
 }

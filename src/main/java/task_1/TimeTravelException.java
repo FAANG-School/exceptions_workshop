@@ -1,7 +1,6 @@
 package task_1;
-class TimeTravelException extends RuntimeException{
+class TimeTravelException extends Exception{
 
-    public TimeTravelException() {}
     public TimeTravelException(String message) {
 
         super(message);
