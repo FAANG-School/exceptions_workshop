@@ -16,5 +16,7 @@ public class OlivandersShop{
         return null;
     };
 
-    void makeOrder(WandOrder wandOrder, Wand wand){}
+    void makeOrder(WandOrder wandOrder, Wand wand){
+        if(wandOrder.quantity < MapExample.getKeyByValue(woodTypeCount, 5)){};
+    }
 }
