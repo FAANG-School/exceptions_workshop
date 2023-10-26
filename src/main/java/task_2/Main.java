@@ -7,10 +7,10 @@ import java.util.Map;
 public class Main{
     public static void main(String[] args) throws NotEnoughWoodException {
 
-        Wand wand = new Wand("dub", 10, "iron", 30); //создание экземпляра палки
+        Wand wand = new Wand("dub", 10, "iron", 3); //создание экземпляра палки
 
-        Map<String, Integer> woodTypeCount = new HashMap<>(); //наполнение будущего экземпляра магаза
-        Map<String, Integer> coreMaterialCount = new HashMap<>();
+        HashMap<String, Integer> woodTypeCount = new HashMap<>(); //наполнение будущего экземпляра магаза
+        HashMap<String, Integer> coreMaterialCount = new HashMap<>();
         woodTypeCount.put("dub", 5);
         woodTypeCount.put("buk", 3);
         coreMaterialCount.put("iron", 4);
@@ -18,9 +18,10 @@ public class Main{
 
         OlivandersShop olivandersShop = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра магаза
 
-        WandOrder wandOrder = new WandOrder("Frodo", wand, 3); //создание экземпляра заказа
+        WandOrder wandOrder = new WandOrder("Frodo", wand, 30); //создание экземпляра заказа
+        olivandersShop.placeOrder(wandOrder);
 
-        System.out.println(MapExample.getKeyByValue(woodTypeCount, 5));
+//        System.out.println(woodTypeCount.get("dub"));
 //        try{
 //
 //        catch (Exception e) {
