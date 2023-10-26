@@ -17,16 +17,25 @@ public class Main{
         coreMaterialCount.put("iron", 5);
         coreMaterialCount.put("carbon", 5);
 
-        OlivandersShop olivandersShop1 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра магаза
+        OlivandersShop olivandersShop1 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра1 магаза
+        OlivandersShop olivandersShop2 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра2 магаза
 
         WandOrder wandOrder1 = new WandOrder("Frodo", wand1, 5); //создание экземпляра1 заказа
-        WandOrder wandOrder2 = new WandOrder("Sam", wand2, 5); //создание экземпляра2 заказа
+//        WandOrder wandOrder2 = new WandOrder("Sam", wand2, 5); //создание экземпляра2 заказа
 
         try{
             olivandersShop1.placeOrder(wandOrder1);}
-
         catch (Exception e) {
             throw new NotEnoughWoodException(e.getMessage());
         }
+
+        try{
+            olivandersShop2.placeOrder(wandOrder1);}
+        catch (Exception e) {
+            throw new NotEnoughWoodException(e.getMessage());
+        }
+
+        System.out.println(OlivandersShop.instances);
+
     }
 }
