@@ -9,9 +9,9 @@ public class WandOrder {
     }
 
     public WandOrder(String customerName, Wand wand, int quantity) {
-        this.customerName = customerName;
-        this.wand = wand;
-        this.quantity = quantity;
+        setCustomerName(customerName);
+        setWand(wand);
+        setQuantity(quantity);
     }
 
     public String getCustomerName() {
@@ -38,7 +38,7 @@ public class WandOrder {
     }
 
     public void setQuantity(int quantity) {
-        if (quantity<=0) {
+        if (quantity <= 0) {
             throw new IllegalArgumentException("Count must be more than 0");
         }
         this.quantity = quantity;

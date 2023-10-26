@@ -7,10 +7,10 @@ public class Wand {
     private int powerLevel;
 
     public Wand(String woodType, int length, String coreMaterial, int powerLevel) {
-        this.woodType = woodType;
-        this.length = length;
-        this.coreMaterial = coreMaterial;
-        this.powerLevel = powerLevel;
+        setWoodType(woodType);
+        setLength(length);
+        setCoreMaterial(coreMaterial);
+        setPowerLevel(powerLevel);
     }
 
     @Override
