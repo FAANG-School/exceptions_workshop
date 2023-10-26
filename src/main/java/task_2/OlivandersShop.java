@@ -13,19 +13,13 @@ public class OlivandersShop{
     }
 
     public void placeOrder(WandOrder order) throws NotEnoughMaterialException {
-        if(order.quantity > woodTypeCount.get(order.wand.woodType))
-        {throw new NotEnoughMaterialException("you're not born yet");}
-        else {System.out.println("enough wood");}
-//        System.out.println(woodTypeCount.get("iron"));
+        if(order.quantity > woodTypeCount.get(order.wand.woodType)) {
+            throw new NotEnoughMaterialException("нужно больше дерева");}
+        if(order.quantity > coreMaterialCount.get(order.wand.coreMaterial)) {
+            throw new NotEnoughMaterialException("нужно больше наполнителя");}
+        else {System.out.println("твой заказ выполнен");}
     };
     public Wand findMostPowerfulWand() {
         return null;
     };
-
-//    void makeOrder(WandOrder wandOrder, Wand wand){
-//        System.out.println("aaaaaaaaaaaaaaanus");
-//        if(wandOrder.quantity < woodTypeCount.get(wand.coreMaterial))
-//        {System.out.println("aaaaaaaaaaaaaaanus");}
-//
-//    }
 }
