@@ -24,9 +24,13 @@ public class SimpsonsSchool {
 
             school.addGrade(school.characterList.get(1), school.courseList.get(0), 4);
             school.addGrade(school.characterList.get(1), school.courseList.get(1), 3);
-            school.addGrade(school.characterList.get(1), school.courseList.get(2), 5);
+            school.addGrade(school.characterList.get(1), school.courseList.get(2), 6);
             school.addGrade(school.characterList.get(1), school.courseList.get(3), 1);
+        try {
             school.getCharacterTranscript(school.characterList.get(1));
+        } catch (EmptyCoursesException e) {
+            throw new RuntimeException(e);
+        }
 
 
     }
@@ -36,11 +40,19 @@ public class SimpsonsSchool {
     }
 
     public void addGrade(SimpsonsCharacter character, SimpsonsCourse course, int gradeValue) {
-        character.getGrades().add(new SimpsonsGrade(course, character, gradeValue));
+        try{
+            character.getGrades().add(new SimpsonsGrade(course, character, gradeValue));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
         //simpsonsGradeList.add(new SimpsonsGrade(course, character, gradeValue));
     }
 
-    public void getCharacterTranscript(SimpsonsCharacter character) {
+    public void getCharacterTranscript(SimpsonsCharacter character) throws EmptyCoursesException {
+        if (character.getEnrolledCourses().isEmpty()) {
+            throw new EmptyCoursesException("Список курсов у " +  character.getName() + " пуст");
+        }
         System.out.println(character.getName() + " записан на предметы:");
         for (SimpsonsGrade simpsonsGrade : character.getGrades()) {
             if (simpsonsGrade.getCharacter().equals(character)) {

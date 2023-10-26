@@ -10,11 +10,11 @@ public class SimpsonsCharacter {
     private List<SimpsonsGrade> grades;
 
     public SimpsonsCharacter(String name, int age, int characterId, List<SimpsonsCourse> enrolledCourses, List<SimpsonsGrade> grades) {
-        this.name = name;
-        this.age = age;
-        this.characterId = characterId;
-        this.enrolledCourses = enrolledCourses;
-        this.grades = grades;
+        setName(name);
+        setAge(age);
+        setCharacterId(characterId);
+        setEnrolledCourses(enrolledCourses);
+        setGrades(grades);
     }
 
     public SimpsonsCharacter() {

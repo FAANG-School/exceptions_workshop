@@ -1,10 +1,5 @@
 package task_3;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-
 public class SimpsonsGrade {
     private SimpsonsCourse course;
     private SimpsonsCharacter character;
@@ -14,9 +9,9 @@ public class SimpsonsGrade {
     }
 
     public SimpsonsGrade(SimpsonsCourse course, SimpsonsCharacter character, int gradeValue) {
-        this.course = course;
-        this.character = character;
-        this.gradeValue = gradeValue;
+        setCourse(course);
+        setCharacter(character);
+        setGradeValue(gradeValue);
     }
 
     public SimpsonsCourse getCourse() {
@@ -40,6 +35,9 @@ public class SimpsonsGrade {
     }
 
     public void setGradeValue(int gradeValue) {
+        if (gradeValue<=0 || gradeValue>5) {
+            throw new IllegalArgumentException("Оценка должна быть от 1 до 5");
+        }
         this.gradeValue = gradeValue;
     }
 }

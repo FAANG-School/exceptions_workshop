@@ -1,10 +1,4 @@
 package task_3;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-
 public class SimpsonsCourse {
     private String courseName;
     private int courseId;
@@ -13,8 +7,8 @@ public class SimpsonsCourse {
     }
 
     public SimpsonsCourse(String courseName, int courseId) {
-        this.courseName = courseName;
-        this.courseId = courseId;
+        setCourseName(courseName);
+        setCourseId(courseId);
     }
 
     public String getCourseName() {
