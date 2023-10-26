@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main{
-    public static void main(String[] args) throws NotEnoughWoodException {
+    public static void main(String[] args) throws NotEnoughWoodException, NotEnoughMaterialException {
 
         Wand wand = new Wand("dub", 10, "iron", 3); //создание экземпляра палки
 
@@ -18,14 +18,14 @@ public class Main{
 
         OlivandersShop olivandersShop = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра магаза
 
-        WandOrder wandOrder = new WandOrder("Frodo", wand, 30); //создание экземпляра заказа
-        olivandersShop.placeOrder(wandOrder);
+        WandOrder wandOrder = new WandOrder("Frodo", wand, 50); //создание экземпляра заказа
 
-//        System.out.println(woodTypeCount.get("dub"));
-//        try{
-//
-//        catch (Exception e) {
-//            throw new NotEnoughWoodException(e.getMessage());
-//        }
+
+
+        try{olivandersShop.placeOrder(wandOrder);}
+
+        catch (Exception e) {
+            throw new NotEnoughWoodException(e.getMessage());
+        }
     }
 }

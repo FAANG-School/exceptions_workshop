@@ -1,5 +1,6 @@
 package task_2;
 
+
 import java.util.Map;
 
 public class OlivandersShop{
@@ -11,20 +12,20 @@ public class OlivandersShop{
         this.coreMaterialCount = coreMaterialCount;
     }
 
-    public void placeOrder(WandOrder order) {
+    public void placeOrder(WandOrder order) throws NotEnoughMaterialException {
         if(order.quantity > woodTypeCount.get(order.wand.woodType))
-        {System.out.println("not enough");}
-        else {System.out.println("enough");}
+        {throw new NotEnoughMaterialException("you're not born yet");}
+        else {System.out.println("enough wood");}
 //        System.out.println(woodTypeCount.get("iron"));
     };
     public Wand findMostPowerfulWand() {
         return null;
     };
 
-    void makeOrder(WandOrder wandOrder, Wand wand){
-        System.out.println("aaaaaaaaaaaaaaanus");
-        if(wandOrder.quantity < woodTypeCount.get(wand.coreMaterial))
-        {System.out.println("aaaaaaaaaaaaaaanus");}
-
-    }
+//    void makeOrder(WandOrder wandOrder, Wand wand){
+//        System.out.println("aaaaaaaaaaaaaaanus");
+//        if(wandOrder.quantity < woodTypeCount.get(wand.coreMaterial))
+//        {System.out.println("aaaaaaaaaaaaaaanus");}
+//
+//    }
 }
