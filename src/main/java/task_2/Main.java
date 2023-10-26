@@ -7,8 +7,8 @@ import java.util.Map;
 public class Main{
     public static void main(String[] args) throws NotEnoughWoodException, NotEnoughMaterialException, IllegalAccessException {
 
-        Wand wand1 = new Wand("dub", 10, "iron", 3); //создание экземпляра палки
-        Wand wand2 = new Wand("buk", 12, "carbon", 1); //создание экземпляра палки
+        Wand wand1 = new Wand("dub", 10, "iron", 32); //создание экземпляра палки
+        Wand wand2 = new Wand("buk", 12, "carbon", 13); //создание экземпляра палки
 
         HashMap<String, Integer> woodTypeCount = new HashMap<>(); //наполнение будущего экземпляра магаза
         HashMap<String, Integer> coreMaterialCount = new HashMap<>();
@@ -18,10 +18,10 @@ public class Main{
         coreMaterialCount.put("carbon", 5);
 
         OlivandersShop olivandersShop1 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра1 магаза
-        OlivandersShop olivandersShop2 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра2 магаза
+//        OlivandersShop olivandersShop2 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра2 магаза
 
         WandOrder wandOrder1 = new WandOrder("Frodo", wand1, 5); //создание экземпляра1 заказа
-//        WandOrder wandOrder2 = new WandOrder("Sam", wand2, 5); //создание экземпляра2 заказа
+        WandOrder wandOrder2 = new WandOrder("Sam", wand2, 5); //создание экземпляра2 заказа
 
         try{
             olivandersShop1.placeOrder(wandOrder1);}
@@ -30,12 +30,11 @@ public class Main{
         }
 
         try{
-            olivandersShop2.placeOrder(wandOrder1);}
+            olivandersShop1.placeOrder(wandOrder2);}
         catch (Exception e) {
             throw new NotEnoughWoodException(e.getMessage());
         }
 
-        System.out.println(OlivandersShop.instances);
-
+        olivandersShop1.findMostPowerfulWand();
     }
 }

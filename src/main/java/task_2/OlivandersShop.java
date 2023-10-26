@@ -14,9 +14,7 @@ public class OlivandersShop{
         this.coreMaterialCount = coreMaterialCount;
     }
 
-    static int cnt;
 
-    static HashMap<Integer, OlivandersShop> instances = new HashMap<>();
 
 
 
@@ -27,11 +25,12 @@ public class OlivandersShop{
             throw new NotEnoughMaterialException("нужно больше наполнителя");}
         else {System.out.println("твой заказ выполнен");}
 
-        cnt++;
-        instances.put(cnt, this);
+
+
 
     };
     public Wand findMostPowerfulWand() {
+        System.out.println(Wand.instances);
         return null;
     };
 }

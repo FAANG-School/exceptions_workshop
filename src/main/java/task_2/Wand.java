@@ -1,11 +1,15 @@
 package task_2;
 
+import java.util.HashMap;
+
 public class Wand{
     String woodType;
     int length;
     String coreMaterial;
     int powerLevel;
 
+    static HashMap<Integer, String> instances = new HashMap<>();
+    static int cnt;
 
 
     public Wand(String woodType, int length, String coreMaterial, int powerLevel) throws IllegalAccessException {
@@ -17,5 +21,8 @@ public class Wand{
         if (coreMaterial == null) throw new IllegalArgumentException ("coreMaterial type must be not null");
         this.powerLevel = powerLevel;
         if (powerLevel <= 0) throw new IllegalArgumentException("powerLevel is " + powerLevel);
+
+        cnt++;
+        instances.put(powerLevel, this.getClass().getSimpleName());
     }
 }
