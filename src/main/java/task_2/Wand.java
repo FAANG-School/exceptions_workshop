@@ -6,13 +6,30 @@ public class Wand {
     private String coreMaterial;
     private int powerLevel;
 
+    public Wand(String woodType, int length, String coreMaterial, int powerLevel) {
+        this.woodType = woodType;
+        this.length = length;
+        this.coreMaterial = coreMaterial;
+        this.powerLevel = powerLevel;
+    }
+
+    @Override
+    public String toString() {
+        return "Wand{" +
+                "woodType='" + woodType + '\'' +
+                ", length=" + length +
+                ", coreMaterial='" + coreMaterial + '\'' +
+                ", powerLevel=" + powerLevel +
+                '}';
+    }
+
     public String getWoodType() {
         return woodType;
     }
 
     public void setWoodType(String woodType) {
         if (woodType.isBlank()) {
-            throw new IllegalArgumentException("Тип дерева должен быть не пустым");
+            throw new IllegalArgumentException("wood type not be empty");
         }
         this.woodType = woodType;
     }
@@ -22,8 +39,8 @@ public class Wand {
     }
 
     public void setLength(int length) {
-        if (length<=0) {
-            throw new IllegalArgumentException("Длина палочки не должна быть равна или меньше нуля");
+        if (length <= 0) {
+            throw new IllegalArgumentException("wand length must be ,ore than 0");
         }
         this.length = length;
     }
@@ -34,7 +51,7 @@ public class Wand {
 
     public void setCoreMaterial(String coreMaterial) {
         if (woodType.isBlank()) {
-            throw new IllegalArgumentException("Материал сердца должен быть не пустым");
+            throw new IllegalArgumentException("core material type not be empty");
         }
         this.coreMaterial = coreMaterial;
     }
@@ -44,8 +61,8 @@ public class Wand {
     }
 
     public void setPowerLevel(int powerLevel) {
-        if (length<=0) {
-            throw new IllegalArgumentException("Мощность палочки не должна быть равна или меньше нуля");
+        if (length <= 0) {
+            throw new IllegalArgumentException("wand power must be ,ore than 0");
         }
         this.powerLevel = powerLevel;
     }

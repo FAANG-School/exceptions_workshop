@@ -5,13 +5,22 @@ public class WandOrder {
     private Wand wand;
     private int quantity;
 
+    public WandOrder() {
+    }
+
+    public WandOrder(String customerName, Wand wand, int quantity) {
+        this.customerName = customerName;
+        this.wand = wand;
+        this.quantity = quantity;
+    }
+
     public String getCustomerName() {
         return customerName;
     }
 
     public void setCustomerName(String customerName) {
         if (customerName.isBlank()) {
-            throw new IllegalArgumentException("Имя покупателя не должно быть пустым");
+            throw new IllegalArgumentException("Name customer must be not empty");
         }
         this.customerName = customerName;
     }
@@ -30,7 +39,7 @@ public class WandOrder {
 
     public void setQuantity(int quantity) {
         if (quantity<=0) {
-            throw new IllegalArgumentException("Колчиество должно быть не равно или меньше нуля");
+            throw new IllegalArgumentException("Count must be more than 0");
         }
         this.quantity = quantity;
     }
