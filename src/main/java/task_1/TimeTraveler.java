@@ -2,9 +2,9 @@ package task_1;
 
 public class TimeTraveler {
 
-    private String name;
-    private int birthYear;
-    private int deathYear;
+    private final String name;
+    private final int birthYear;
+    private final int deathYear;
 
     public TimeTraveler(String name, int birthYear, int deathYear) {
         this.name = name;

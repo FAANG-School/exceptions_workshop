@@ -10,7 +10,7 @@ public class TimeMachine {
         this.isWorking = isWorking;
     }
 
-    public void travelInTime(TimeTraveler timeTraveler, int yearInTheFuture) throws TimeTravelException {
+    public void travelInTime(TimeTraveler timeTraveler, int yearInTheFuture) {
         if (!isWorking) {
             throw new TimeTravelException("The time machine is not working at the moment!");
         }
@@ -23,14 +23,6 @@ public class TimeMachine {
         System.out.println("The trip was successful! The traveler " + timeTraveler.getName() + " is in " + yearInTheFuture + ".");
     }
 
-    public static void trip(TimeMachine timeMachine, TimeTraveler timeTraveler) {
-        try {
-            timeMachine.travelInTime(timeTraveler, 2070);
-        } catch (TimeTravelException e) {
-            System.out.println(e);
-        }
-    }
-
     public static void main(String[] args) {
         TimeMachine timeMachineOne = new TimeMachine(2023, true);
         TimeMachine timeMachineTwo = new TimeMachine(2000, false);
@@ -39,10 +31,16 @@ public class TimeMachine {
         TimeTraveler timeTravelerTwo = new TimeTraveler("Mike", 2025, 2080);
         TimeTraveler timeTravelerThree = new TimeTraveler("Kate", 2080, 2150);
 
-        trip(timeMachineOne, timeTravelerOne);
-        trip(timeMachineOne, timeTravelerTwo);
-        trip(timeMachineOne, timeTravelerThree);
+        // исключение "The traveler has already died!"
+        timeMachineOne.travelInTime(timeTravelerOne, 2070);
 
-        trip(timeMachineTwo, timeTravelerOne);
+        // успешное выполнение программы
+        timeMachineOne.travelInTime(timeTravelerTwo, 2070);
+
+        // исключение "The traveler has not yet been born!"
+        timeMachineOne.travelInTime(timeTravelerThree, 2070);
+
+        // исключение "The time machine is not working at the moment!"
+        timeMachineTwo.travelInTime(timeTravelerOne, 2070);
     }
 }
