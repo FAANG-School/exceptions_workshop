@@ -18,7 +18,7 @@ public class Main{
         coreMaterialCount.put("carbon", 5);
 
         OlivandersShop olivandersShop1 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра1 магаза
-//        OlivandersShop olivandersShop2 = new OlivandersShop(woodTypeCount, coreMaterialCount); //создание экземпляра2 магаза
+
 
         WandOrder wandOrder1 = new WandOrder("Frodo", wand1, 5); //создание экземпляра1 заказа
         WandOrder wandOrder2 = new WandOrder("Sam", wand2, 5); //создание экземпляра2 заказа

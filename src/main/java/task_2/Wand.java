@@ -8,7 +8,7 @@ public class Wand{
     String coreMaterial;
     int powerLevel;
 
-    static HashMap<Integer, String> instances = new HashMap<>();
+    static HashMap<Integer, String> instances = new HashMap<Integer, String>();
     static int cnt;
 
 
@@ -23,6 +23,6 @@ public class Wand{
         if (powerLevel <= 0) throw new IllegalArgumentException("powerLevel is " + powerLevel);
 
         cnt++;
-        instances.put(powerLevel, this.getClass().getSimpleName());
+        instances.put(powerLevel, this.toString());
     }
 }
