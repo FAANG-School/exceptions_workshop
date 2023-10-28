@@ -26,92 +26,92 @@ public class Task5 {
 		MagicItem magicItem8 = new MagicItem("Mekansm", 22, 65);
 		MagicItem magicItem9 = new MagicItem("Force Staff", 150, 19);
 		
-//		try {
-//			new MagicItem(null, 150, 19);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation MagicItem exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new MagicItem(" ", 150, 19);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation MagicItem exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new MagicItem("Test ", -1, 19);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation MagicItem exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new MagicItem("Test ", 100, -1);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation MagicItem exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new Hero(null, 15);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation Hero exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new Hero(" ", 15);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation Hero exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			new Hero("Hero", -1);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Creation Hero exception: {}", e.getMessage());
-//		}
-//		
-//		try {
-//			hero1.addItemToInventory(null);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Exception when invoke addItemToInventory(): {}", e.getMessage());
-//		}
-//		
-//		hero1.addItemToInventory(magicItem9);
-//		hero1.addItemToInventory(magicItem9);
-//		hero1.addItemToInventory(magicItem2);
-//		
-//		
-//		try {
-//			hero1.useItem(null);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Exception when invoke useItem(): {}", e.getMessage());
-//		}
-//		
-//		try {
-//			hero1.useItem(magicItem1);
-//		} catch (NoItemsException e) {
-//			log.error("Exception when invoke useItem(): {}", e.getMessage());
-//		}
-//		
-//		try {
-//			hero1.useItem(magicItem9);
-//		} catch (BattleException e) {
-//			log.error("Exception when invoke useItem(): {}", e.getMessage());
-//		}
-//		
-//		hero1.useItem(magicItem2);
-//		
+		try {
+			new MagicItem(null, 150, 19);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation MagicItem exception: {}", e.getMessage());
+		}
+		
+		try {
+			new MagicItem(" ", 150, 19);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation MagicItem exception: {}", e.getMessage());
+		}
+		
+		try {
+			new MagicItem("Test ", -1, 19);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation MagicItem exception: {}", e.getMessage());
+		}
+		
+		try {
+			new MagicItem("Test ", 100, -1);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation MagicItem exception: {}", e.getMessage());
+		}
+		
+		try {
+			new Hero(null, 15);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation Hero exception: {}", e.getMessage());
+		}
+		
+		try {
+			new Hero(" ", 15);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation Hero exception: {}", e.getMessage());
+		}
+		
+		try {
+			new Hero("Hero", -1);
+		} catch (IllegalArgumentException e) {
+			log.error("Creation Hero exception: {}", e.getMessage());
+		}
+		
+		try {
+			hero1.addItemToInventory(null);
+		} catch (IllegalArgumentException e) {
+			log.error("Exception when invoke addItemToInventory(): {}", e.getMessage());
+		}
+		
+		hero1.addItemToInventory(magicItem9);
+		hero1.addItemToInventory(magicItem9);
+		hero1.addItemToInventory(magicItem2);
+		
+		
+		try {
+			hero1.useItem(null);
+		} catch (IllegalArgumentException e) {
+			log.error("Exception when invoke useItem(): {}", e.getMessage());
+		}
+		
+		try {
+			hero1.useItem(magicItem1);
+		} catch (NoItemsException e) {
+			log.error("Exception when invoke useItem(): {}", e.getMessage());
+		}
+		
+		try {
+			hero1.useItem(magicItem9);
+		} catch (BattleException e) {
+			log.error("Exception when invoke useItem(): {}", e.getMessage());
+		}
+		
+		hero1.useItem(magicItem2);
+		
 		BattleSimulator battleSimulator = new BattleSimulator();
-//		
-//		try {
-//			battleSimulator.simulateBattle(null, 1);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Exception when invoke simulateBattle(): {}", e.getMessage());
-//		}
-//		
-//		try {
-//			battleSimulator.simulateBattle(hero1, 0);
-//		} catch (IllegalArgumentException e) {
-//			log.error("Exception when invoke simulateBattle(): {}", e.getMessage());
-//		}
+		
+		try {
+			battleSimulator.simulateBattle(null, 1);
+		} catch (IllegalArgumentException e) {
+			log.error("Exception when invoke simulateBattle(): {}", e.getMessage());
+		}
+		
+		try {
+			battleSimulator.simulateBattle(hero1, 0);
+		} catch (IllegalArgumentException e) {
+			log.error("Exception when invoke simulateBattle(): {}", e.getMessage());
+		}
 		
 		hero6.addItemToInventory(magicItem1);
 		hero6.addItemToInventory(magicItem2);
