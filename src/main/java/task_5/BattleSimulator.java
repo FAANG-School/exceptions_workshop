@@ -17,12 +17,15 @@ public class BattleSimulator {
 			throw new IllegalArgumentException("Allowed 1 turn atleast");
 		}
 
+		log.info("Beginning a battle simulation with {}, number of turns: {}", hero.getHeroName(), numTurns );
 		Random random = new Random();
 
 		MagicItem[] inventory = hero.getInventory().toArray(new MagicItem[hero.getInventory().size()]);
 
 		for (int i = 0; i < numTurns; i++) {
 
+			log.info("Turn {} start", i + 1);
+			
 			int nextInt = random.nextInt(inventory.length);
 
 			try {

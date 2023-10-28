@@ -7,9 +7,11 @@ import java.util.Map;
 import java.util.Set;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import task_5.exceptions.BattleException;
 import task_5.exceptions.NoItemsException;
 
+@Slf4j
 @Getter
 public class Hero {
 
@@ -39,6 +41,14 @@ public class Hero {
 			throw new IllegalArgumentException("Null agrs");
 		}
 
+		String itemName = item.getItemName();
+
+		if (inventory.contains(item)) {
+			log.warn("{} is in {}'s inventory already", itemName, heroName);
+		} else {
+			log.info("Adding {} to {}'s inventory", itemName, heroName);
+		}
+
 		return inventory.add(item);
 	}
 
@@ -52,20 +62,24 @@ public class Hero {
 		int itemManaCost = item.getManaCost();
 
 		if (!inventory.contains(item)) {
-			throw new NoItemsException(itemName + "out of inventory");
+			throw new NoItemsException(itemName + " is out of inventory");
 		}
 
 		if (itemManaCost > currentMana) {
 			throw new BattleException("Not enough mana to use " + itemName);
 		}
 
+		int cooldown = item.getCooldown();
+		
 		if (itemUsage.containsKey(itemName)
-				&& Instant.now().getEpochSecond() - itemUsage.get(itemName) < item.getCooldown()) {
+				&& Instant.now().getEpochSecond() - itemUsage.get(itemName) < cooldown) {
+			log.warn("{} with cooldown {} was used {} sec. ago", itemName, cooldown, Instant.now().getEpochSecond() - itemUsage.get(itemName));
 			throw new BattleException(itemName + " still cooling down");
 		}
 
 		itemUsage.put(itemName, Instant.now().getEpochSecond());
 		currentMana -= itemManaCost;
+		log.info("{} with mana cost: {} was used", item.getItemName(), itemManaCost);
 
 	}
 
