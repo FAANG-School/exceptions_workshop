@@ -15,6 +15,7 @@ public class HeroTest {
 
 	private final Hero hero1 = new Hero("Axe", 15);
 	private final Hero hero2 = new Hero("Huskar", 10);
+	private final Hero hero3 = new Hero("Phoenix", 10000);
 	private final MagicItem magicItem1 = new MagicItem("Magic Wand", 36, 13);
 	private final MagicItem magicItem2 = new MagicItem("Bracer", 24, 10);
 
@@ -63,6 +64,16 @@ public class HeroTest {
 		Exception exception2 = Assertions.assertThrows(BattleException.class,
 				() -> hero1.useItem(magicItem1));
 		assertEquals("Not enough mana to use " + magicItem1.getItemName(), exception2.getMessage());
+		
+		hero3.addItemToInventory(magicItem2);
+		hero3.useItem(magicItem2);
+		assertTrue(hero3.getItemUsage().containsKey(magicItem2.getItemName()));
+		assertEquals(hero3.getCurrentMana(), 10000 - magicItem2.getManaCost());
+		
+		Exception exception3 = Assertions.assertThrows(BattleException.class,
+				() -> hero3.useItem(magicItem2));
+		assertEquals(magicItem2.getItemName() + " still cooling down", exception3.getMessage());
+		
 	}
 
 }
