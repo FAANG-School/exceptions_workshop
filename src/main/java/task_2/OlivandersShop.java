@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import task_2.exceptions.NotEnoughMaterialException;
 import task_2.exceptions.NotEnoughWoodException;
 import task_2.exceptions.OrdersListIsEmptyException;
 
 @Slf4j
+@Getter
 public class OlivandersShop {
 
 	private final Map<String, Integer> woodTypeCount = new HashMap<>();
