@@ -4,3 +4,6 @@
 .project
 .settings
 bin/
+!**/src/main/**/build/
+!**/src/test/**/build/
+build/
