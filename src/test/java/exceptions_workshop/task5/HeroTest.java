@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 
 import task_5.Hero;
 import task_5.MagicItem;
+import task_5.exceptions.BattleException;
+import task_5.exceptions.NoItemsException;
 
 public class HeroTest {
 
@@ -43,6 +45,24 @@ public class HeroTest {
 		hero2.addItemToInventory(new MagicItem("Magic Wand", 36, 13));
 		
 		assertTrue(hero2.getInventory().contains(magicItem1));
+	}
+	
+	@Test
+	void useItem() {
+		
+		Exception exception = Assertions.assertThrows(IllegalArgumentException.class,
+				() -> hero1.useItem(null));
+		assertEquals("Null agrs", exception.getMessage());
+		
+		Exception exception1 = Assertions.assertThrows(NoItemsException.class,
+				() -> hero1.useItem(magicItem1));
+		assertEquals(magicItem1.getItemName() + " is out of inventory", exception1.getMessage());
+		
+		hero1.addItemToInventory(magicItem1);
+		
+		Exception exception2 = Assertions.assertThrows(BattleException.class,
+				() -> hero1.useItem(magicItem1));
+		assertEquals("Not enough mana to use " + magicItem1.getItemName(), exception2.getMessage());
 	}
 
 }
