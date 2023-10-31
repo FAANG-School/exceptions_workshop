@@ -33,7 +33,4 @@ public class TimeTraveler {
         return dearthYear;
     }
 
-    public void setDearthYear(int dearthYear) {
-        this.dearthYear = dearthYear;
-    }
 }
