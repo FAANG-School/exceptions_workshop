@@ -1,11 +1,13 @@
 package task_3;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 public class SimpsonsSchool {
-  //  private List<SimpsonsGrade> simpsonsGradeList = new ArrayList<>();
     private List<SimpsonsCharacter> characterList = new ArrayList<>();
     private List<SimpsonsCourse> courseList = new ArrayList<>();
 
@@ -22,14 +24,14 @@ public class SimpsonsSchool {
             school.enrollCharacter(character, school.courseList);
         }
 
-            school.addGrade(school.characterList.get(1), school.courseList.get(0), 4);
-            school.addGrade(school.characterList.get(1), school.courseList.get(1), 3);
-            school.addGrade(school.characterList.get(1), school.courseList.get(2), 6);
-            school.addGrade(school.characterList.get(1), school.courseList.get(3), 1);
+        school.addGrade(school.characterList.get(1), school.courseList.get(0), 4);
+        school.addGrade(school.characterList.get(1), school.courseList.get(1), 3);
+        school.addGrade(school.characterList.get(1), school.courseList.get(2), 6);
+        school.addGrade(school.characterList.get(1), school.courseList.get(3), 1);
         try {
             school.getCharacterTranscript(school.characterList.get(1));
         } catch (EmptyCoursesException e) {
-            throw new RuntimeException(e);
+            log.info(e.getStackTrace());
         }
 
 
@@ -40,18 +42,16 @@ public class SimpsonsSchool {
     }
 
     public void addGrade(SimpsonsCharacter character, SimpsonsCourse course, int gradeValue) {
-        try{
+        try {
             character.getGrades().add(new SimpsonsGrade(course, character, gradeValue));
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            e.printStackTrace();
+            log.info(e.getStackTrace());
         }
-        //simpsonsGradeList.add(new SimpsonsGrade(course, character, gradeValue));
     }
 
     public void getCharacterTranscript(SimpsonsCharacter character) throws EmptyCoursesException {
         if (character.getEnrolledCourses().isEmpty()) {
-            throw new EmptyCoursesException("Список курсов у " +  character.getName() + " пуст");
+            throw new EmptyCoursesException("Список курсов у " + character.getName() + " пуст");
         }
         System.out.println(character.getName() + " записан на предметы:");
         for (SimpsonsGrade simpsonsGrade : character.getGrades()) {
