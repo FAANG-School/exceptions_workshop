@@ -1,9 +1,11 @@
 package task_5;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Random;
-
+@Slf4j
 public class BattleSimulator {
     public static void main(String[] args) {
         BattleSimulator battleSimulator = new BattleSimulator();
@@ -33,7 +35,7 @@ public class BattleSimulator {
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                log.info(e.getStackTrace());
             }
             try {
                 randomNumber = rnd.nextInt(hero.getInventory().size());

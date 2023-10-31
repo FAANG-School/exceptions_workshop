@@ -26,14 +26,11 @@ public class Hero {
         if (magicItem.getManaCost() > currentMana) {
             throw new BattleException(heroName + " dont have mana to use " + magicItem.getItemName());
         }
-        Long l = itemUsages.get(magicItem.getItemName());
-        if (l==null) {
-            l=0l;
-        }
-        if ((System.currentTimeMillis() - l)<magicItem.getCooldown()) {
+        long l = itemUsages.get(magicItem.getItemName());
+        if ((System.currentTimeMillis() - l) < magicItem.getCooldown()) {
             throw new BattleException(heroName + " dont have opportunity to use " + magicItem.getItemName() + " because its dont restore after use");
         }
-        currentMana-=magicItem.getManaCost();
+        currentMana -= magicItem.getManaCost();
         itemUsages.put(magicItem.getItemName(), System.currentTimeMillis());
         System.out.println(heroName + " use " + magicItem.getItemName());
     }
